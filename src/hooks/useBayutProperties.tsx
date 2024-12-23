@@ -11,6 +11,11 @@ export const useBayutProperties = (PropertiesQueries?: PropertiesQueries) =>
         {
             params: {
                 purpose: PropertiesQueries?.purpose?.value,
+                sort: PropertiesQueries?.sort?.value,
+                rentFrequency: PropertiesQueries?.rentFrequency?.value,
+                categoryExternalID:
+                    PropertiesQueries?.categoryExternalID?.value,
+                furnishingStatus: PropertiesQueries?.furnishingStatus?.value,
             },
         }
     );
