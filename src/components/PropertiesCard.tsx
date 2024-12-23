@@ -23,7 +23,12 @@ const PropertyCard = ({ property }: Props) => {
     return (
         <Card>
             <CardHeader>
-                <Image src={property.coverPhoto.url} />
+                <Image
+                    src={property.coverPhoto.url}
+                    width={500}
+                    height={200}
+                    className="object-cover"
+                />
             </CardHeader>
             <CardBody className="py-3 px-5">
                 <div className="flex items-center gap-1">
@@ -60,7 +65,9 @@ const PropertyCard = ({ property }: Props) => {
                         {" "}
                         ${property.price.toLocaleString()}
                     </span>
-                    <span className="font-semibold">/month</span>
+                    <span className="font-semibold">
+                        {property.purpose === "for-rent" ? "/monthly" : null}
+                    </span>
                 </h2>
             </CardBody>
         </Card>

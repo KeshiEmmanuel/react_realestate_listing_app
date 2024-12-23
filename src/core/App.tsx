@@ -3,6 +3,7 @@ import MainNavbar from "../components/MainNavbar";
 import PropertiesGrid from "../components/PropertiesGrid";
 import PropertiesFilterator from "../components/PropertiesFilterator";
 import { PropertiesQueries } from "../types/FilterTypes";
+import FeaturedPropertiesCard from "../components/FeaturedPropertiesCard";
 
 function App() {
     const [propertiesQueries, setPropertiesQueries] =
@@ -10,6 +11,7 @@ function App() {
     return (
         <main>
             <MainNavbar />
+            <FeaturedPropertiesCard />
             <PropertiesFilterator
                 propertiesQueries={propertiesQueries}
                 setPropertiesQueries={setPropertiesQueries}

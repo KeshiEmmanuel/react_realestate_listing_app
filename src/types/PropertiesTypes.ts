@@ -7,6 +7,7 @@ export type BayutPropertiesTypes = {
     furnishingStatus: "furnished" | "unfurnished";
     isVerified: boolean;
     rooms: number;
+    purpose: string;
     baths: number;
     coverPhoto: {
         url: string;
