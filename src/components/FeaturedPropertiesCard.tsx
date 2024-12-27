@@ -5,9 +5,14 @@ const FeaturedPropertiesCard = () => {
     return (
         <div className="max-w-[980px] mx-auto py-4 overflow-hidden">
             <h1 className="text-3xl pb-2 font-bold">Featured Properties</h1>
-            <div className="flex items-center py-4 gap-3">
+            <div className="flex flex-col md:flex-row px-3 md:px-0 items-center py-4 gap-3">
                 {data.slice(0, 2).map((property) => (
-                    <Card isFooterBlurred className="border-none" radius="lg">
+                    <Card
+                        key={property.id}
+                        isFooterBlurred
+                        className="border-none"
+                        radius="lg"
+                    >
                         <Image
                             alt={property.title}
                             className="object-cover brightness-50"

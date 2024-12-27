@@ -5,6 +5,7 @@ export type BayutPropertiesTypes = {
     product: string;
     state: string;
     furnishingStatus: "furnished" | "unfurnished";
+    rentFrequency: string;
     isVerified: boolean;
     rooms: number;
     purpose: string;

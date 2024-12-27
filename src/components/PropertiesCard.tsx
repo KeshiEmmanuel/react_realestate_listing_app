@@ -10,7 +10,8 @@ interface Props {
 }
 
 const PropertyCard = ({ property }: Props) => {
-    const [seeFullDescription, setSeeFullDescription] = useState(false);
+    const [seeFullDescription, setSeeFullDescription] =
+        useState<boolean>(false);
     let title = property.title;
     if (title.length > 50) {
         if (!seeFullDescription) {
@@ -62,16 +63,37 @@ const PropertyCard = ({ property }: Props) => {
                 </h1>
                 <h2 className="py-2">
                     <span className="text-xl">
-                        {" "}
                         ${property.price.toLocaleString()}
                     </span>
                     <span className="font-semibold">
-                        {property.purpose === "for-rent" ? "/monthly" : null}
+                        {automatedFrequency(property.rentFrequency)}
                     </span>
                 </h2>
             </CardBody>
         </Card>
     );
 };
+
+function automatedFrequency(rentFrequency: string) {
+    let answer = "";
+    switch (rentFrequency) {
+        case "monthly":
+            answer = "/Monthly";
+            break;
+        case "yearly":
+            answer = "/Yearly";
+            break;
+        case "weekly":
+            answer = "/Weekly";
+            break;
+        case "daily":
+            answer = "/Daily";
+            break;
+        default:
+            answer = " Only";
+            break;
+    }
+    return answer;
+}
 
 export default PropertyCard;
